@@ -11,7 +11,7 @@ AttackController::AttackController(Character* c, Character* t, DungeonMap* m) : 
 int AttackController::move() {
     Position currentpos, newpos;
     target = AttackController::fixedtarget();
-    //target = AttackController::isvisible();
+    //target = AttackController::isvisible();                                   //LoS funktioniert nicht für targeting
     if (target == 0) return 5;
     currentpos = m_map->findCharacter(Controller::getCharacter());
     vector<Position> path = m_map->getPathTo(currentpos, m_map->findCharacter(target));
